@@ -18,7 +18,7 @@ module.exports = {
     resolve: {
         extensions: ['*', '.js', '.ts', '.tsx'],
         alias: {
-            src: path.resolve(__dirname, "src")
+            '@': path.resolve(__dirname, 'src'),
         }
     },
     devtool: "source-map",
@@ -38,7 +38,7 @@ module.exports = {
                 ],
                 use: [
                     isDevelopment ? "style-loader" : MiniCssExtractPlugin.loader,
-                    "css-loader?url=false",                    
+                    "css-loader?url=false",
                     { loader: "scoped-css-loader" },
                     {
                         loader: "sass-loader",

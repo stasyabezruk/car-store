@@ -18,7 +18,7 @@
         "esModuleInterop": true,
         // use typescript to transpile jsx to js
         "jsx": "react",
-        "baseUrl": ".",
+        "baseUrl": "./src",
         "lib": [
             "dom",
             "es2018",
@@ -37,9 +37,7 @@
         "forceConsistentCasingInFileNames": true,
         "importHelpers": true,
         "paths": {
-            "src/*": [
-                "./src/*"
-            ]
+            "@/*": ["*"]
         }
     },
     "include": [
