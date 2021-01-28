@@ -1,13 +1,15 @@
-import { CarsListItem } from "@/types/carsTypes";
+import { ICarsListItem } from "@/types/carsTypes";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type CarsListState = {
-    cars: CarsListItem[];
+    items: ICarsListItem[];
+    isLoading: boolean;
     error: string;
 }
 
 const initialState: CarsListState = {
-    cars: [],
+    items: [],
+    isLoading: true,
     error: ''
 }
 
@@ -15,8 +17,9 @@ const carsListSlice = createSlice({
     name: "carsList",
     initialState,
     reducers: {
-        fetchDataCars(state, { payload }: PayloadAction<CarsListItem[]>) {
-            state.cars = payload;
+        fetchDataCars(state, { payload }: PayloadAction<ICarsListItem[]>) {
+            state.items = payload;
+            state.isLoading = false;
         },
 
         fetchDataCarsError: (state, { payload }: PayloadAction<string>) => {

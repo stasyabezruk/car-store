@@ -1,7 +1,7 @@
 import { call, put, takeEvery, fork, ForkEffect } from "redux-saga/effects";
 import { carsApi } from "@/api/carsApi";
-import { fetchDataCars, fetchDataCarsError } from "@/features/carsListSlice";
-import { getData } from "@/actions/carsActions";
+import { fetchDataCars, fetchDataCarsError } from "./carsListSlice";
+import { getData } from "./carsActions";
 import { AppAction } from "@/types/baseTypes";
 
 export function* getAllCarsWorker(action: AppAction) {

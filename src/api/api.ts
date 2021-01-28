@@ -11,9 +11,7 @@ export class Api {
             const config = {
                 ...param,
             baseURL: API_BASE,
-            }
-            console.log('config', config);
-
+            }  
             return {
                 ...config
             }

@@ -1,4 +1,4 @@
-export interface CarsListItem {
+export interface ICarsListItem {
     code: string;
     name: string;
     priceFrom: string;
