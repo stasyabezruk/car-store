@@ -26,14 +26,15 @@ export const getCurrenSelectedTrimPrice = createSelector(
     getCurrentSelectedTrim,
     ({ price }: ICarTrim): number => price || 0,
 );
+//END --- TRIM
 
+
+//COLOR
 export const getCurrentSelectedTrimColors = createSelector(
     getCurrentSelectedTrim,
     ({ colors }: ICarTrim): IColor[] => sortByKey(colors || [], 'price'),
 );
-//END --- TRIM
 
-//COLOR
 export const getCurrentSelectedColor = createSelector(
     getCurrentSelectedTrimColors,
     getSelectedColorName,

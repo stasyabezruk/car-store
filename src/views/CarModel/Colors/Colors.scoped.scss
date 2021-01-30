@@ -1,0 +1,43 @@
+.colors {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 24rem;
+    margin: -8px auto;
+
+    &-item {
+        min-width: 6rem;
+        text-align: center;
+        cursor: pointer;
+        width: calc(33.33333% - 1rem);
+        margin: .5rem;
+
+        &:hover img {
+            border-color: #007edb;
+        }
+
+        &.colors-item-selected img {
+            padding: 0;
+        }
+
+        img {
+            width: 2.25rem;
+            height: 2.25rem;
+            padding: .25rem;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+        }
+
+        &-name {
+            margin-top: .1rem;
+            font-size: .8rem;
+            color: #666;
+        }
+
+        &-price {
+            font-size: .8rem;
+            color: #999;
+        }
+    }
+}

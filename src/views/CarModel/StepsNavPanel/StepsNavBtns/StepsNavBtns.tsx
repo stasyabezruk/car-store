@@ -4,7 +4,7 @@ import './StepsNavBtns.scoped.scss';
 
 type Props = {
     prevUrl: string;
-    nextUrl: string
+    nextUrl: string | undefined;
 }
 
 const StepsNavBtns: React.FC<Props> = ({
@@ -13,14 +13,9 @@ const StepsNavBtns: React.FC<Props> = ({
 }) => {
     return (
         <div className="steps-nav-btns">
-            <ArrowBtn
-                url={prevUrl}
-                isBackBtn
-            />
+            <ArrowBtn url={prevUrl} isBackBtn/>
 
-            <ArrowBtn
-                url={nextUrl}                
-            />
+            {nextUrl && <ArrowBtn url={nextUrl}/>}            
         </div>
     )
 }

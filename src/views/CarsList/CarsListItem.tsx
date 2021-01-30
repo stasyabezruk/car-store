@@ -17,7 +17,7 @@ const CarsListItem: React.FC<Props> = ({
         <div className="cars-list-item">
             <Link to={`/models/${item.code}/${STEPS.TRIMS}`}>
                 <div className="cars-list-item-img">
-                    <img src={item.imageUrl} />
+                    <img src={item.imageUrl} alt={item.name} title={item.name}/>
                 </div>
                 <div className="cars-list-item-name">{item.name}</div>
                 <div className="cars-list-item-price">

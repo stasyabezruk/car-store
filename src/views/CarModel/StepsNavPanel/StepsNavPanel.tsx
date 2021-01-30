@@ -6,7 +6,7 @@ type Props = {
     title: string;
     children: ReactNode;
     prevUrl: string;
-    nextUrl: string
+    nextUrl?: string
 }
 
 const StepsNavPanel: React.FC<Props> = ({
