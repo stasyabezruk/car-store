@@ -1,0 +1,25 @@
+@import '@/styles/constants.scss';
+
+.button {
+    color: #fff;
+    background-color: $color-blue;
+    padding: 1.2rem 1.4rem;
+    border: 1px solid $color-blue;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    font-size: 1rem;
+    outline: none;
+
+    padding: 2.4rem;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    max-width: 22rem;
+
+    &.outlined {
+        color: $color-blue;
+        background-color: #fff;
+    }
+}

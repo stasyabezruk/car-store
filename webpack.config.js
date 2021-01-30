@@ -31,6 +31,28 @@ module.exports = {
                     loader: "babel-loader"
                 }
             },
+
+            {
+                test: /\.module\.s(a|c)ss$/,
+                use: [
+                    true ? "style-loader" : MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: true,
+                            sourceMap: isDevelopment,
+                        },
+                    },
+
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: isDevelopment,
+                        },
+                    },
+                ],
+            },
+            
             {
                 test: /\.s(a|c)ss$/,
                 exclude: [

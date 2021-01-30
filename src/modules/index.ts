@@ -1,9 +1,11 @@
 import { all } from "redux-saga/effects";
-import { carsWatchers } from "./cars/carsSaga";
+import { carsWatchers } from "./cars/sagas";
+import { carModelWatchers } from "./carModel/sagas";
 
 export default function* rootSagas() {
     const watchers = [
-        ...carsWatchers
+        ...carsWatchers,
+        ...carModelWatchers
     ];
 
     yield all(watchers);

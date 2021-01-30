@@ -1,7 +1,7 @@
 import { ICarsListItem } from "@/types/carsTypes";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type CarsListState = {
+export type CarsListState = {
     items: ICarsListItem[];
     isLoading: boolean;
     error: string;

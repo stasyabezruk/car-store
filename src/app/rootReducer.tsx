@@ -1,14 +1,17 @@
 import { combineReducers } from "redux";
-import carsListReducer from "@/modules/cars/carsListSlice";
+import carsListSlice from "@/modules/cars/reducer";
+import carModelSlice from "@/modules/carModel/reducer";
 
 export let rootReducer = combineReducers({
-    cars: carsListReducer
+    cars: carsListSlice,
+    carModel: carModelSlice
 })
 
 export default function createReducer(injectedReducers = {}) {
     const rootReducer = combineReducers({
         ...injectedReducers,
-        cars: carsListReducer
+        cars: carsListSlice,
+        carModel: carModelSlice
     });
     return rootReducer;
 }

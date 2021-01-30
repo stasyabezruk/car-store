@@ -1,4 +1,5 @@
-import { CarsListItem } from "@/types/carsTypes";
+import { ICarsListItem } from "@/types/carsTypes";
+import { ICarModel } from "@/types/carModelTypes";
 import { AxiosRequestConfig, AxiosResponse } from "axios";
 
 import { Api } from "./api";
@@ -9,21 +10,24 @@ class CarsApi extends Api {
         super(apiConfig);
 
         this.getAllCars = this.getAllCars.bind(this);
-        //this.insertNewUser = this.insertNewUser.bind(this);
+        this.getCarsConfigById = this.getCarsConfigById.bind(this);
     }
 
-    public getAllCars (): Promise<CarsListItem[]> {
-        return this.get<CarsListItem[]>(`/Cars/Models`)
-        .then((result: AxiosResponse<CarsListItem[]>) => {
+    public getAllCars (): Promise<ICarsListItem[]> {
+        return this.get<ICarsListItem[]>(`/Cars/Models`)
+        .then((result: AxiosResponse<ICarsListItem[]>) => {
             return result.data
         });
     }
 
-    /* public insertNewUser (user: NewUser): Promise<number> {
-        return this.post<number, NewUser>(`/api/v1/users`, {...user})
-        .then((res: AxiosResponse<number>) => res.status)
+    public getCarsConfigById (id: string): Promise<ICarModel> {
+        return this.get<ICarModel>(`/Cars/Model/${id}`)
+        .then((result: AxiosResponse<ICarModel>) => {
+            return result.data
+        });
+    }
 
-    } */
+   
 }
 
 export const carsApi = new CarsApi(apiConfig);
