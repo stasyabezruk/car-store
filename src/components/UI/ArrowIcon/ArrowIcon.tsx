@@ -1,4 +1,5 @@
 import React, { SVGAttributes } from 'react';
+import  "./ArrowIcon.scoped.scss";
 
 const ArrowIcon = (props: SVGAttributes<SVGElement>) => (
   <svg

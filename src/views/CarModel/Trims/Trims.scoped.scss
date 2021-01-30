@@ -1,0 +1,17 @@
+.trim-btn {
+    &:not(:first-child) {
+        margin-top: 1rem;
+    }
+
+    &-price {
+        margin-top: .3rem;
+        font-size: .9rem;
+        font-weight: 400;
+        text-transform: none;
+        color: white;
+    }
+
+    &.outlined .trim-btn-price {
+        color: #737780;
+    }
+}

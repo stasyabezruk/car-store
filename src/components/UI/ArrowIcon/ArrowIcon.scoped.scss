@@ -1,0 +1,9 @@
+.arrow-icon {
+    fill: #fff;
+
+    &.arrow-back {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+        fill: #007edb;
+    }
+}
