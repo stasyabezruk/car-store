@@ -26,16 +26,11 @@ const Colors = () => {
         [dispatch],
     );
 
-    /*  const handleSubmit = useCallback(
-       () => dispatch(purchaseModel()),
-       [dispatch],
-     ); */
-
     return (
         <StepsNavPanel
             title="SELECT COLOR"
             prevUrl={`/models/${id}/${STEPS.TRIMS}`}
-
+            panelType={STEPS.COLORS}           
         >
             <div className="colors">
                 {colors.map((color: IColor) => (

@@ -16,3 +16,9 @@ export interface ICarModel {
     name: string;
     trims: ICarTrim[];
 }
+
+export interface CheckoutPostData {
+    modelName: string;
+    trimName: string;
+    colorName: string;
+}

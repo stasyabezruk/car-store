@@ -30,6 +30,7 @@ const Trims = () => {
             title="CHOOSE EQUIPMENT LEVEL"
             prevUrl={'/models'}
             nextUrl={`/models/${id}/${STEPS.COLORS}`}
+            panelType={STEPS.TRIMS}
         >
             <div className="trims">
                 {trims.map((trim: ICarTrim) => (

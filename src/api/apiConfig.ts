@@ -7,11 +7,6 @@ export const API_BASE  = 'https://reacttestprojectapi.azurewebsites.net' || "htt
 export const apiConfig: AxiosRequestConfig = {
     timeout: 15000,
     baseURL: API_BASE,
-    headers: {
-        common: {            
-            Accept: "application/json",
-        },
-        'X-API-KEY': API_KEY
-    },
+    headers: { 'X-API-KEY': API_KEY },
     paramsSerializer: (params) => qs.stringify(params, { indices: false }),
 };

@@ -21,7 +21,7 @@ const CarsList = () => {
 
     return (
         <div className="cars-list-container">
-            <h1 className="cars-list-header">CHOOSE YOUR NEW CAR</h1>
+            <div className="cars-list-header">CHOOSE YOUR NEW CAR</div>
             <div className="cars-list">
                 {items.map(item => {
                     return (

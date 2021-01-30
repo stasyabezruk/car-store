@@ -38,6 +38,10 @@ const carModelSlice = createSlice({
             state.isLoading = false;
         },
 
+        setIsLoading(state, { payload }: PayloadAction<boolean>) {
+            state.isLoading = payload;
+        },
+
         setSelectedTrimName(state, { payload }: PayloadAction<string>) {
             state.selectedTrimName = payload;
         },
@@ -56,6 +60,7 @@ export const {
     fetchDataModel,
     setSelectedTrimName,
     setSelectedColorName,
+    setIsLoading,
     fetchDataModelError
 } = carModelSlice.actions;
 export default carModelSlice.reducer;

@@ -17,7 +17,6 @@ const CarModelOverview = () => {
     const colorName = useSelector(getCurrentSelectedColorName);
     const price = useSelector(getCurrentModelPrice);
 
-
     return (
         <div className="model">
             <img src={imageUrl} alt={colorName} title={colorName} />

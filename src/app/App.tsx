@@ -3,12 +3,13 @@ import { Router, Switch, Route, Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import { Layout } from "@/components/hoc";
 import { Loader } from "@/components/UI";
-import { ROUTE_MODELS, ROUTE_MODEL_STEP } from "@/utils/constants/URL";
+import { ROUTE_MODELS, ROUTE_MODEL_STEP, ROUTE_MODEL_CHECKOUT } from "@/utils/constants/URL";
 
 const CarsList = lazy(() => import("@/views/CarsList"));
 const CarModel = lazy(() => import("@/views/CarModel"));
+const CheckoutView = lazy(() => import("@/views/CheckoutView"));
 
-const history = createBrowserHistory();
+export const history = createBrowserHistory();
 
 const App = () => {
     return (
@@ -18,6 +19,7 @@ const App = () => {
                     <Switch>
                         <Redirect exact from="/" to={ROUTE_MODELS} />
                         <Route exact path={ROUTE_MODELS} component={CarsList} />
+                        <Route exact path={ROUTE_MODEL_CHECKOUT} component={CheckoutView} />
                         <Route path={ROUTE_MODEL_STEP} component={CarModel} />
                     </Switch>
                 </Suspense>
