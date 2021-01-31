@@ -1,4 +1,5 @@
 @import '@/styles/constants.scss';
+@import '@/styles/mixins.scss';
 
 .model {
     position: relative;
@@ -41,5 +42,29 @@
         margin-top: auto;
         font-size: 1.4rem;
         font-weight: 700;
+    }
+}
+
+@include tablet {
+    .model {
+        width: 100%;
+        height: auto;
+        padding: 2rem 1rem;
+
+        &-trim {
+            position: relative;
+            padding: 0;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        &-color {
+            font-size: 13px;
+            margin: 0 0 5px 0;
+        }
+
+        &-price {
+            font-size: 14px;
+        }
     }
 }

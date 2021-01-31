@@ -4,10 +4,13 @@ import { CHECKOUT } from "@/utils/enums/CHECKOUT";
 import { AppAction } from "@/types/baseTypes";
 import { carsApi } from "@/api/carsApi";
 import { FETCH_DATA_MODEL, INIT_CHECKOUT } from "./actions";
-import { fetchDataModel, fetchDataModelError, setIsLoading } from "./reducer";
+import { fetchDataModel, fetchDataModelError, setIsLoading, setSelectedTrimName, setSelectedColorName } from "./reducer";
 import { getCarModelName, getSelectedTrimName, getSelectedColorName } from "./selectors";
 
 function* getCarModelWorker(action: AppAction<FETCH_DATA_MODEL>) {
+    yield put(setIsLoading(true));
+    yield put(setSelectedTrimName(''));
+    yield put(setSelectedColorName(''));
     try {
         if (FETCH_DATA_MODEL.match(action)) {
             let response = yield call(carsApi.getCarsConfigById, action.payload);
@@ -16,6 +19,7 @@ function* getCarModelWorker(action: AppAction<FETCH_DATA_MODEL>) {
     } catch (e) {
         yield put(fetchDataModelError(e.message));
     }
+    yield put(setIsLoading(false));
 }
 
 function* checkOutWorker(action: AppAction) {

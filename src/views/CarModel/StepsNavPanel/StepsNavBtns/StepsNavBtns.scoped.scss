@@ -1,3 +1,5 @@
+@import '@/styles/mixins.scss';
+
 .steps-nav-btns {
     position: absolute;
     bottom: 0;
@@ -14,5 +16,11 @@
     &.two-btns :nth-child(3) {
         opacity: 0;
         visibility: hidden;
+    }
+}
+
+@include tablet {
+    .steps-nav-btns {
+        position: fixed;
     }
 }

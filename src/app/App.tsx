@@ -1,7 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { Router, Switch, Route, Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history";
-import { Layout } from "@/components/hoc";
 import { Loader } from "@/components/UI";
 import { ROUTE_MODELS, ROUTE_MODEL_STEP, ROUTE_MODEL_CHECKOUT } from "@/utils/constants/URL";
 
@@ -13,18 +12,16 @@ export const history = createBrowserHistory();
 
 const App = () => {
     return (
-        <Layout>
-            <Router history={history}>
-                <Suspense fallback={<Loader />}>
-                    <Switch>
-                        <Redirect exact from="/" to={ROUTE_MODELS} />
-                        <Route exact path={ROUTE_MODELS} component={CarsList} />
-                        <Route exact path={ROUTE_MODEL_CHECKOUT} component={CheckoutView} />
-                        <Route path={ROUTE_MODEL_STEP} component={CarModel} />
-                    </Switch>
-                </Suspense>
-            </Router>
-        </Layout>
+        <Router history={history}>
+            <Suspense fallback={<Loader />}>
+                <Switch>
+                    <Redirect exact from="/" to={ROUTE_MODELS} />
+                    <Route exact path={ROUTE_MODELS} component={CarsList} />
+                    <Route exact path={ROUTE_MODEL_CHECKOUT} component={CheckoutView} />
+                    <Route path={ROUTE_MODEL_STEP} component={CarModel} />
+                </Switch>
+            </Suspense>
+        </Router>
     )
 }
 

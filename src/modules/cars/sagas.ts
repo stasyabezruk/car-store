@@ -1,10 +1,11 @@
 import { call, put, takeLatest, fork, ForkEffect } from "redux-saga/effects";
 import { carsApi } from "@/api/carsApi";
-import { fetchDataCars, fetchDataCarsError } from "./reducer";
+import { fetchDataCars, fetchDataCarsError, setIsLoading } from "./reducer";
 import { FETCH_DATA_CARS } from "./actions";
 import { AppAction } from "@/types/baseTypes";
 
 export function* getAllCarsWorker(action: AppAction) {
+    yield put(setIsLoading(true));
     try {
         if (FETCH_DATA_CARS.match(action)) {
             let response = yield call(carsApi.getAllCars);

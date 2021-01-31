@@ -16,9 +16,18 @@
     text-transform: uppercase;
     max-width: 22rem;
 
+    &:hover {
+        opacity: .8;
+    }   
+
     &.outlined {
         color: $color-blue;
         background-color: #fff;
+
+        &:hover {
+            opacity: 1;
+            background-color: rgba(0,126,219,.08);
+        }
     }
 
     &.md {

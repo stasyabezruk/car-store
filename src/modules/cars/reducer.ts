@@ -22,6 +22,10 @@ const carsListSlice = createSlice({
             state.isLoading = false;
         },
 
+        setIsLoading(state, { payload }: PayloadAction<boolean>) {
+            state.isLoading = payload;
+        },
+
         fetchDataCarsError: (state, { payload }: PayloadAction<string>) => {
             state.error = payload;
         },
@@ -30,6 +34,7 @@ const carsListSlice = createSlice({
 
 export const { 
     fetchDataCars, 
-    fetchDataCarsError 
+    fetchDataCarsError,
+    setIsLoading
 } = carsListSlice.actions;
 export default carsListSlice.reducer;

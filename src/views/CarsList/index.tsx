@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FETCH_DATA_CARS } from "@/modules/cars/actions";
 import { getCarsList, getCarsListIsLoading } from "@/modules/cars/selectors";
 import CarsListItem from "./CarsListItem";
-import { Loader } from "@/components/UI";
+import { Layout } from "@/components/hoc";
 import "./CarsList.scoped.scss";
 
 const CarsList = () => {
@@ -15,26 +15,23 @@ const CarsList = () => {
         dispatch(FETCH_DATA_CARS());
     }, [dispatch]);
 
-    if (items.length === 0 || isLoading) {
-        return <Loader />
-    }
-
     return (
-        <div className="cars-list-container">
-            <div className="cars-list-header">CHOOSE YOUR NEW CAR</div>
-            <div className="cars-list">
-                {items.map(item => {
-                    return (
-                        <CarsListItem
-                            key={item.code}
-                            item={item}
-                        />
-                    )
+        <Layout isLoading={isLoading}>
+            <div className="cars-list-container">
+                <div className="cars-list-header">CHOOSE YOUR NEW CAR</div>
+                <div className="cars-list">
+                    {items.map(item => {
+                        return (
+                            <CarsListItem
+                                key={item.code}
+                                item={item}
+                            />
+                        )
 
-                })}
+                    })}
+                </div>
             </div>
-        </div>
-
+        </Layout>
     )
 }
 

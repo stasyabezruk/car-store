@@ -7,6 +7,7 @@ import StepsNavPanel from "../StepsNavPanel/StepsNavPanel";
 import { STEPS } from "@/utils/enums/STEPS";
 import { ICarTrim } from "@/types/carModelTypes";
 import TrimsItem from "./TrimsItem";
+import './Trims.scoped.scss';
 
 interface RouteParams {
     id: string

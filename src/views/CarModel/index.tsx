@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { FETCH_DATA_MODEL } from "@/modules/carModel/actions";
 import CarModelOverview from "./CarModelOverview/CarModelOverview";
 import { getCarModelIsLoading } from "@/modules/carModel/selectors";
-import { Loader } from "@/components/UI";
+import { Layout } from "@/components/hoc";
 import './index.scoped.scss';
 import StepsTemplate from "./StepsTemplate";
 
@@ -18,20 +18,17 @@ const CarModel = () => {
 
     const { id } = useParams<RouteParams>();
 
-    useEffect(()=> {
+    useEffect(() => {
         dispatch(FETCH_DATA_MODEL(id))
     }, [dispatch, id]);
 
-
-    if (isLoading) {
-        return <Loader />
-    }
-
     return (
-        <div className="model-view">
-            <CarModelOverview/>
-            <StepsTemplate/>
-        </div>
+        <Layout isLoading={isLoading}>
+            <div className="model-view">
+                <CarModelOverview />
+                <StepsTemplate />
+            </div>
+        </Layout>
     )
 
 }

@@ -34,8 +34,6 @@ const carModelSlice = createSlice({
 
             const [{ name: selectedColorName }] = sortByKey(colors, 'price');
             state.selectedColorName = selectedColorName;
-
-            state.isLoading = false;
         },
 
         setIsLoading(state, { payload }: PayloadAction<boolean>) {

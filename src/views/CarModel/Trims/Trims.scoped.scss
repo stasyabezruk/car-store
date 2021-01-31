@@ -1,3 +1,10 @@
+.trims {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
 .trim-btn {
     &:not(:first-child) {
         margin-top: 1rem;
